@@ -483,3 +483,25 @@ background:#ff7777;
   font-size:18px;
   color:rgba(255,255,255,.85);
 }
+
+/* 全站取消圆角 */
+*,
+*::before,
+*::after{
+    border-radius:0 !important;
+}
+
+*,
+*::before,
+*::after{
+    border-radius:0 !important;
+}
+
+button,
+input,
+a,
+.card,
+[class*="card"],
+[class*="box"]{
+    border-radius:0 !important;
+}
