@@ -1,0 +1,9 @@
+generator client { provider = "prisma-client-js" }
+datasource db { provider = "sqlite" url = env("DATABASE_URL") }
+enum UserRole { USER REVIEWER OWNER }
+enum SubmissionStatus { PENDING APPROVED NEEDS_CHANGES REJECTED }
+model User { id String @id @default(cuid()) email String @unique passwordHash String role UserRole @default(USER) createdAt DateTime @default(now()) submissions Submission[] @relation("Submitter") reviews Submission[] @relation("Reviewer") auditLogs AuditLog[] }
+model Game { id String @id @default(cuid()) slug String @unique name String englishName String? description String category String version String? coverPath String? createdAt DateTime @default(now()) updatedAt DateTime @updatedAt resources Resource[] }
+model Resource { id String @id @default(cuid()) gameId String provider String url String extraction String? createdAt DateTime @default(now()) game Game @relation(fields:[gameId],references:[id],onDelete:Cascade) }
+model Submission { id String @id @default(cuid()) submitterId String gameName String description String? category String? version String? coverPath String? resourceUrl String status SubmissionStatus @default(PENDING) reviewerId String? reviewNote String? createdAt DateTime @default(now()) reviewedAt DateTime? submitter User @relation("Submitter",fields:[submitterId],references:[id]) reviewer User? @relation("Reviewer",fields:[reviewerId],references:[id]) }
+model AuditLog { id String @id @default(cuid()) actorId String? action String entityType String entityId String? details String? ip String? createdAt DateTime @default(now()) actor User? @relation(fields:[actorId],references:[id],onDelete:SetNull) }

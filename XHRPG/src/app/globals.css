@@ -1,0 +1,473 @@
+:root{--bg:#10090b;--line:#4a2028;--text:#f8eeee;--main:#8b1e2d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Microsoft YaHei"}
+.xhrpg-home{min-height:100vh;display:flex}
+.drawer-nav{width:240px;background:#fff;color:#111;padding:25px 18px;flex-shrink:0}
+.logo-box{background:#10090b;color:#fff;padding:25px;font-size:32px;margin-bottom:30px;border:1px solid #333}
+.logo-box span{color:#8b1e2d;display:block}
+.nav-item{border:1px solid #ddd;padding:16px;margin-bottom:10px}
+.content-area{flex:1;padding:20px 30px}
+.top-bar{display:flex;justify-content:space-between;margin-bottom:20px}
+.top-bar input{height:42px;flex:1;max-width:700px;background:#160c0f;border:1px solid var(--line);color:white;padding:0 15px}
+button{background:var(--main);color:white;border:1px solid var(--line);padding:12px 25px}
+.latest-box{height:420px;border:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;background:#160c0f}
+.latest-inner{display:flex;height:100%;gap:30px;align-items:center}
+.latest-inner img{height:90%;aspect-ratio:1;object-fit:cover}
+.game-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.square-card{border:1px solid var(--line);background:#160c0f;color:white;text-decoration:none}
+.square-card img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.square-card div{padding:12px}
+@media(max-width:900px){.drawer-nav{width:80px}.game-grid{grid-template-columns:repeat(2,1fr)}}
+
+
+/* XHRPG 抽屉导航与封面卡片 */
+.drawer-nav{
+ position:fixed;
+ left:0;
+ top:0;
+ height:100vh;
+ width:70px;
+ background:#fff;
+ color:#10090b;
+ overflow:hidden;
+ transition:.3s;
+ z-index:20;
+ border-right:1px solid #4a2028;
+}
+
+.drawer-nav.open{
+ width:230px;
+}
+
+.logo-box,
+.nav-item{
+ padding:16px;
+ white-space:nowrap;
+}
+
+.content-area{
+ margin-left:90px;
+}
+
+.latest-cover{
+ width:320px;
+ height:220px;
+ background-size:cover;
+ background-position:center;
+}
+
+.square-card{
+ position:relative;
+ aspect-ratio:1/1;
+ overflow:hidden;
+ display:block;
+}
+
+.square-card img{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+}
+
+.game-title{
+ position:absolute;
+ left:0;
+ bottom:0;
+ width:100%;
+ padding:12px;
+ background:linear-gradient(transparent,rgba(0,0,0,.85));
+ color:#fff;
+}
+/* 游戏详情页 */
+
+.detail-page{
+
+width:100%;
+
+min-height:100vh;
+
+position:relative;
+
+overflow:hidden;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:white;
+
+}
+
+
+
+.detail-bg{
+
+position:absolute;
+
+inset:-40px;
+
+background-size:cover;
+
+background-position:center;
+
+filter:blur(25px);
+
+transform:scale(1.15);
+
+z-index:0;
+
+}
+
+
+
+.detail-mask{
+
+position:absolute;
+
+inset:0;
+
+background:rgba(0,0,0,.55);
+
+z-index:1;
+
+}
+
+
+
+.detail-container{
+
+position:relative;
+
+z-index:2;
+
+width:100%;
+
+max-width:1200px;
+
+padding:40px;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+
+
+.detail-card{
+
+width:100%;
+
+min-height:500px;
+
+display:flex;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.2);
+
+border-radius:30px;
+
+overflow:hidden;
+
+box-shadow:0 20px 80px rgba(0,0,0,.5);
+
+}
+
+
+
+.detail-card img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+.detail-card{
+
+width:600px;
+
+}
+
+
+
+.detail-content{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+
+
+.detail-cover{
+
+width:420px;
+
+max-height:600px;
+
+margin-top:40px;
+
+border-radius:20px;
+
+overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(0,0,0,.2);
+
+}
+
+
+
+.detail-cover img{
+
+width:auto;
+
+height:auto;
+
+max-width:100%;
+
+max-height:600px;
+
+object-fit:contain;
+
+}
+
+
+
+.detail-cover img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+
+
+.detail-info{
+
+width:100%;
+
+padding:40px;
+
+text-align:center;
+
+}
+
+
+
+.detail-info h1{
+
+font-size:42px;
+
+margin-bottom:20px;
+
+}
+
+
+
+.description{
+
+font-size:18px;
+
+opacity:.85;
+
+line-height:2;
+
+}
+
+
+
+.game-meta{
+
+margin-top:25px;
+
+line-height:2;
+
+}
+
+
+
+.detail-info button{
+
+margin-top:30px;
+
+}
+
+.download-box{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+margin-top:40px;
+
+}
+
+
+
+.download-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+min-width:180px;
+
+padding:15px 30px;
+
+border-radius:8px;
+
+font-size:18px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+color:white;
+
+transition:.25s;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.3);
+
+}
+
+
+/* itch.io 风格红色 */
+
+.download-btn.lanzou,
+.download-btn.pan123{
+
+background:#fa5c5c;
+
+border:2px solid #ff8080;
+
+}
+
+
+
+.download-btn:hover{
+
+transform:translateY(-3px);
+
+background:#ff6b6b;
+
+box-shadow:
+0 12px 30px rgba(250,92,92,.5);
+
+}
+
+
+
+/* 历史版本 */
+
+.history-box{
+
+margin-top:50px;
+
+padding:30px;
+
+border-top:1px solid rgba(255,255,255,.2);
+
+}
+
+
+
+.history-box h2{
+
+font-size:28px;
+
+margin-bottom:20px;
+
+}
+
+
+
+.history-item{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 20px;
+
+margin-bottom:15px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:12px;
+
+}
+
+
+
+.history-item span{
+
+margin-left:20px;
+
+opacity:.7;
+
+}
+
+
+
+.history-btns{
+
+display:flex;
+
+gap:15px;
+
+}
+
+
+
+.history-btns a{
+
+padding:8px 18px;
+
+border-radius:8px;
+
+background:#fa5c5c;
+
+color:white;
+
+text-decoration:none;
+
+font-size:14px;
+
+}
+
+
+
+.history-btns a:hover{
+
+background:#ff7777;
+
+}
