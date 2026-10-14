@@ -1,7 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import { ArrowRight, ArrowUpRight, CheckCircle2, ExternalLink, Gamepad2, Plus, Search, ShieldCheck, Sparkles, UserRound, X } from "lucide-react";
-import { categories, games, type Game } from "@/lib/games";
+import { categories, games, type Game } from "@/app/data/games";
 
 export default function HomePage(){
  const [query,setQuery]=useState(""); const [category,setCategory]=useState("全部"); const [sort,setSort]=useState("最新收录");
