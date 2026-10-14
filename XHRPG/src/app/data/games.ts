@@ -87,7 +87,7 @@ export const games:Game[]=[
 
     author:"XiaoWoo & Reborn Maker工作室",
 
-    category:"角色扮演",
+    category:"剧情、悬疑、恐怖",
 
     version:"v1.2",
 
