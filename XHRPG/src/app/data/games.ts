@@ -85,7 +85,7 @@ export const games:Game[]=[
 
     en:"",
 
-    author:"XiaoWoo & ",
+    author:"XiaoWoo & Reborn Maker工作室",
 
     category:"角色扮演",
 
