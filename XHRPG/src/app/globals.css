@@ -471,3 +471,15 @@ font-size:14px;
 background:#ff7777;
 
 }
+
+.description{
+  white-space: pre-line;
+  line-height: 2;
+}
+
+.description{
+  white-space:pre-line;
+  line-height:2;
+  font-size:18px;
+  color:rgba(255,255,255,.85);
+}
