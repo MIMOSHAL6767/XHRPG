@@ -2,6 +2,7 @@
 
 
 import {
+use,
 useEffect,
 useState
 } from "react";
@@ -19,11 +20,18 @@ params
 
 }:{
 
-params:{
+params:Promise<{
 id:string
-}
+}>
 
 }){
+
+
+const {
+id
+
+}=use(params);
+
 
 
 const router = useRouter();
@@ -80,7 +88,7 @@ async function load(){
 const res =
 await fetch(
 
-`/api/admin/banner/${params.id}`
+`/api/admin/banner/${id}`
 
 );
 
@@ -116,7 +124,7 @@ data.banner.background || ""
 load();
 
 
-},[params.id]);
+},[id]);
 
 
 
@@ -337,7 +345,7 @@ await uploadFile(backgroundFile);
 const res =
 await fetch(
 
-`/api/admin/banner/${params.id}`,
+`/api/admin/banner/${id}`,
 
 {
 
@@ -458,7 +466,7 @@ return;
 const res =
 await fetch(
 
-`/api/admin/banner/${params.id}`,
+`/api/admin/banner/${id}`,
 
 {
 
