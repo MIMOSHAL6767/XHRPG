@@ -83,20 +83,24 @@ export const games:Game[]=[
 
     name:"喜羊羊与灰太狼之羊村大崩坏 红太狼篇",
 
-    en:"ASTRAL RUINS",
+    en:"",
 
-    author:"XHRPG编辑组",
+    author:"XiaoWoo & ",
 
     category:"角色扮演",
 
-    version:"v1.2.0",
+    version:"v1.2",
 
     date:"2026-10-12",
 
     updateDate:"2026-10-12",
 
     description:
-    "不能坏的生命。",
+    `不能坏的生命已经是存在的。
+    所以旧约眼光之所及，不过是坟墓而已。
+    
+    网盘密码统一为1234
+    `,
 
     tags:[
         "探索",
@@ -114,7 +118,7 @@ export const games:Game[]=[
 
 
     lanzou:
-    "https://pan.lanzou.com/",
+    "https://wwbai.lanzoup.com/iVwoy4bxl2na",
 
 
     pan123:
